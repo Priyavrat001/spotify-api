@@ -6,6 +6,7 @@ dotenv.config({});
 
 const app = express();
 const PORT = 3000;
+let response = "Spotify api is working fine";
 
 app.use(express.json());
 
@@ -52,6 +53,8 @@ app.get("/callback", (req, res) => {
         console.log(accessToken, refreshToken);
 
         res.redirect("/");
+
+        response = "Login successFully"
 
         setInterval(async () => {
             const data = await spotifyApi.refreshAccessToken();
@@ -152,7 +155,7 @@ app.get("/top-tracks", async (req, res) => {
 
 
 app.get("/", (req, res) => {
-    res.send("Spotify api working fine")
+    res.send(response)
 })
 
 app.listen(PORT, () => {

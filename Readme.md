@@ -32,21 +32,6 @@ Authenticate using your Spotify account by visiting the `/login` route.
 1. **Clone the repo:**
 
 ```bash
-git clone https://github.com/your-username/spotify-api-integration.git
-cd spotify-api-integration
-Install dependencies:
-
-bash
-Copy
-Edit
-npm install
-Set up environment variables:
-
-Create a .env file in the root folder with the following content:
-
-env
-Copy
-Edit
 CLIENT_ID=your_spotify_client_id
 CLIENT_SECRET=your_spotify_client_secret
 REDIRECT_URL=http://localhost:3000/callback
