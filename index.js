@@ -51,6 +51,8 @@ app.get("/callback", (req, res) => {
 
         console.log(accessToken, refreshToken);
 
+        res.send("Success");
+
         setInterval(async () => {
             const data = await spotifyApi.refreshAccessToken();
             const accessTokenRef = data.body.access_token;
@@ -62,8 +64,6 @@ app.get("/callback", (req, res) => {
 
         res.send("Error getting the token");
     });
-
-    return res.redirect("/")
 });
 
 app.get("/search", async(req, res) => {
